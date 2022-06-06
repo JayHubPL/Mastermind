@@ -6,8 +6,7 @@
 class Statistics {
 public:
     int tries;
-    std::vector<Code> guesses;
     bool terminated;
 
-    Statistics(std::vector<Code> guesses);
+    Statistics(int tries, bool terminated);
 };

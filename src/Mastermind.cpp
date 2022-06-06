@@ -19,6 +19,7 @@ bool Mastermind::isGameFinished() const {
     return (codeKeeper.wasCodeBroken() or geneticAlgorithm.generationLimitReached());
 }
 
-Statistics Mastermind::getAlgorithmStatistics() const {
-    return geneticAlgorithm.getStatistics();
+Statistics Mastermind::getStatistics() const {
+    bool terminated = geneticAlgorithm.generationLimitReached() and not codeKeeper.wasCodeBroken();
+    return Statistics(geneticAlgorithm.getGenerationNo(), terminated);
 }

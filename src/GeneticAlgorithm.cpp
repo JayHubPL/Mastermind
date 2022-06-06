@@ -24,7 +24,7 @@ void GeneticAlgorithm::nextStep() {
 }
 
 bool GeneticAlgorithm::generationLimitReached() const {
-    return (generationNo >= maxGenerations);
+    return (generationNo >= maxGuesses);
 }
 
 int GeneticAlgorithm::getGenerationNo() const {

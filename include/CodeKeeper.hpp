@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Code.hpp"
+#include <string>
 
 class CodeKeeper {
     Code secretCode;

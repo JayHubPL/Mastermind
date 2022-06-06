@@ -11,7 +11,7 @@ public:
     void nextRound();
     void startGameLoop();
     bool isGameFinished() const;
-    Statistics getAlgorithmStatistics() const;
+    Statistics getStatistics() const;
 private:
     Score guess(const Code& guess);
 };

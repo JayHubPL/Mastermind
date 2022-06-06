@@ -3,18 +3,17 @@
 #include <iostream>
 
 int main() {
-    int simulations = 10000;
+    int simulations = 1000;
     int terminated = 0;
     long long sum = 0;
     for (int i = 0; i < simulations; ++i) {
         Mastermind mastermind;
         mastermind.startGameLoop();
-        int gens = mastermind.getAlgorithmStatistics().tries;
-        if (gens > Parameters::maxGenerations)
+        Statistics stats = mastermind.getStatistics();
+        if (stats.terminated)
             terminated++;
-        else {
-            sum += gens;
-        }
+        else
+            sum += stats.tries;
     }
     std::cout << "Terminated:\n"
         << "count:\t\t" << terminated << '\n'

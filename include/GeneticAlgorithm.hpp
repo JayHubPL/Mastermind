@@ -17,6 +17,5 @@ public:
     Code& getNextGuess();
     void nextStep();
     bool generationLimitReached() const;
-    Statistics getStatistics() const;
     int getGenerationNo() const;
 };
