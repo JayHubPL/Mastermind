@@ -1,8 +1,6 @@
-#include "../include/CodeKeeper.hpp"
+#include "CodeKeeper.hpp"
 
-CodeKeeper::CodeKeeper() : codeBroken(false) {
-    secretCode = Code::getRandomCode();
-}
+CodeKeeper::CodeKeeper() : codeBroken(false), secretCode(Code::getRandomCode()) {}
 
 CodeKeeper::CodeKeeper(Code code) : codeBroken(false), secretCode(code) {}
 

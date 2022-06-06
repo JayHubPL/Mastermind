@@ -1,4 +1,5 @@
 #include "Mastermind.hpp"
+#include "Parameters.hpp"
 #include <iostream>
 
 int main() {
@@ -8,8 +9,8 @@ int main() {
     for (int i = 0; i < simulations; ++i) {
         Mastermind mastermind;
         mastermind.startGameLoop();
-        int gens = mastermind.getGenerationCount();
-        if (gens == 13)
+        int gens = mastermind.getAlgorithmStatistics().tries;
+        if (gens > Parameters::maxGenerations)
             terminated++;
         else {
             sum += gens;

@@ -5,9 +5,7 @@
 using namespace std;
 using namespace Parameters;
 
-Code::Code() {
-    code = getRandomCodeArray();
-}
+Code::Code() : code(getRandomCodeArray()) {}
 
 Code::Code(string code) {
     for (int i = 0; i < noOfColors; ++i)

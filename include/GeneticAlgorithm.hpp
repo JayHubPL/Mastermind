@@ -3,6 +3,7 @@
 #include "Population.hpp"
 #include "CodeKeeper.hpp"
 #include "CrossSelector.hpp"
+#include "Statistics.hpp"
 #include <string>
 #include <vector>
 
@@ -16,5 +17,6 @@ public:
     Code& getNextGuess();
     void nextStep();
     bool generationLimitReached() const;
+    Statistics getStatistics() const;
     int getGenerationNo() const;
 };

@@ -7,7 +7,7 @@ class CrossSelector {
     std::vector<bool> crossingMask;
 public:
     CrossSelector();
-    std::vector<Specimen> applyMaskToPopulation(std::vector<Specimen>& specimens);
+    std::vector<Specimen> applyMaskToPopulation(std::vector<Specimen>& specimens) const;
 private:
     void generateMask();
 };

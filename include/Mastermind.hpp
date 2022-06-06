@@ -2,6 +2,7 @@
 
 #include "GeneticAlgorithm.hpp"
 #include "CodeKeeper.hpp"
+#include "Statistics.hpp"
 
 class Mastermind {
     GeneticAlgorithm geneticAlgorithm;
@@ -10,7 +11,7 @@ public:
     void nextRound();
     void startGameLoop();
     bool isGameFinished() const;
-    int getGenerationCount() const; // debug
+    Statistics getAlgorithmStatistics() const;
 private:
     Score guess(const Code& guess);
 };

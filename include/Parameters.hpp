@@ -8,6 +8,6 @@ namespace Parameters {
     const double percentOfPopulationToCross = 0.5;
     const double survivalChance = 0.1;
     const int splitIndex = 2;
-    const bool survivorsMutate = true;
+    const bool parentsMutate = true;
     const double mutationChance = 0.1;
 }

@@ -11,19 +11,13 @@ void Population::initialize() {
 }
 
 void Population::nextGeneration() {
-    vector<Specimen> nextPopulation;
-    vector<Specimen> specimensToCross = crossSelector.applyMaskToPopulation(population);
-    int offspringCount = populationSize - specimensToCross.size();
-    vector<Specimen> offsprings = makeOffsprings(specimensToCross, offspringCount);
-    vector<Specimen> specimensToMutate(offsprings);
-    if (survivorsMutate)
-        specimensToMutate.insert(specimensToMutate.end(), specimensToCross.begin(), specimensToCross.end());
-    else
-        nextPopulation.insert(nextPopulation.end(), specimensToCross.begin(), specimensToCross.end());
-    applyMutation(specimensToMutate);
-    nextPopulation.insert(nextPopulation.end(), specimensToMutate.begin(), specimensToMutate.end());
-    population = nextPopulation;
-
+    vector<Specimen> parents = crossSelector.applyMaskToPopulation(population);
+    vector<Specimen> nextGen = makeOffsprings(parents, populationSize - parents.size());
+    applyMutation(nextGen);
+    if (parentsMutate)
+        applyMutation(parents);
+    nextGen.insert(nextGen.end(), parents.begin(), parents.end());
+    population = nextGen;
 }
 
 Specimen& Population::getBestSpecimen() {

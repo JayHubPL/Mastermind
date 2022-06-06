@@ -39,7 +39,7 @@ void CrossSelector::generateMask() {
     }
 }
 
-vector<Specimen> CrossSelector::applyMaskToPopulation(vector<Specimen>& specimens) {
+vector<Specimen> CrossSelector::applyMaskToPopulation(vector<Specimen>& specimens) const {
     vector<Specimen> selected;
     for (int i = 0; i < populationSize; ++i)
         if (crossingMask[i])
