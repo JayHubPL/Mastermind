@@ -6,8 +6,9 @@
 using namespace std;
 using namespace Parameters;
 
-void Population::initialize() {
-    generateRandomPopulation();
+Population::Population() {
+    for (int i = 0; i < populationSize; ++i)
+        population.push_back(Specimen());
 }
 
 void Population::nextGeneration() {
@@ -38,12 +39,6 @@ void Population::applyMutation(vector<Specimen>& specimensToMutate) {
     for (auto& specimen : specimensToMutate)
         if (RNG::testEvent(mutationChance))
             specimen.mutate();
-}
-
-void Population::generateRandomPopulation() {
-    population.clear();
-    for (int i = 0; i < populationSize; ++i)
-        population.push_back(Specimen());
 }
 
 vector<Specimen> Population::makeOffsprings(vector<Specimen>& specimensToCross, int offspringCount) {

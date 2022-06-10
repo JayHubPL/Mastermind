@@ -1,12 +1,5 @@
 #include "Mastermind.hpp"
 
-void Mastermind::nextRound() {
-    codeKeeper.checkTheGuess(geneticAlgorithm.getNextGuess());
-    if (codeKeeper.wasCodeBroken() or geneticAlgorithm.generationLimitReached())
-        return;
-    geneticAlgorithm.nextStep();
-}
-
 void Mastermind::startGameLoop() {
     codeKeeper.checkTheGuess(geneticAlgorithm.getNextGuess());
     while (not isGameFinished()) {

@@ -5,9 +5,7 @@
 using namespace std;
 using namespace Parameters;
 
-GeneticAlgorithm::GeneticAlgorithm(string firstGuess) : firstGuess(firstGuess), generationNo(FIRST_GEN_NUMBER) {
-    population.initialize();
-}
+GeneticAlgorithm::GeneticAlgorithm(string firstGuess) : firstGuess(firstGuess), generationNo(FIRST_GEN_NUMBER) {}
 
 Code& GeneticAlgorithm::getNextGuess() {
     Code nextGuess = population.getBestSpecimen();

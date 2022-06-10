@@ -8,10 +8,9 @@ class Mastermind {
     GeneticAlgorithm geneticAlgorithm;
     CodeKeeper codeKeeper;
 public:
-    void nextRound();
     void startGameLoop();
-    bool isGameFinished() const;
     Statistics getStatistics() const;
 private:
+    bool isGameFinished() const;
     Score guess(const Code& guess);
 };
