@@ -5,7 +5,7 @@
 #include <vector>
 
 class Population {
-    std::vector<Specimen> population;
+    std::vector<Specimen> specimens;
     CrossSelector crossSelector;
 public:
     Population();

@@ -5,7 +5,10 @@
 using namespace std;
 using namespace Parameters;
 
-Code::Code() : code(getRandomCodeArray()) {}
+Code::Code() {
+    for (int i = 0; i < codeLength; ++i)
+        code[i] = RNG::uniformRandom(0, noOfColors - 1);
+}
 
 Code::Code(string code) {
     for (int i = 0; i < noOfColors; ++i)
@@ -20,17 +23,6 @@ Score Code::getScore() const {
 
 void Code::setScore(const Score& score) {
     this->score = score;
-}
-
-Code Code::getRandomCode() {
-    return Code(getRandomCodeArray());
-}
-
-array<int, codeLength> Code::getRandomCodeArray() {
-    array<int, codeLength> code;
-    for (int i = 0; i < codeLength; ++i)
-        code[i] = RNG::uniformRandom(0, noOfColors - 1);
-    return code;
 }
 
 Score Code::compareCodes(const Code& code1, const Code& code2) {

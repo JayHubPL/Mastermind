@@ -19,7 +19,5 @@ public:
     Score getScore() const;
     void setScore(const Score& score);
 
-    static Code getRandomCode();
-    static std::array<int, Parameters::codeLength> getRandomCodeArray();
     static Score compareCodes(const Code& code1, const Code& code2);
 };

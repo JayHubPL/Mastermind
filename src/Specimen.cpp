@@ -20,11 +20,7 @@ Specimen Specimen::crossWith(const Specimen& other) {
     array<int, codeLength> offspringCode;
     for (int i = 0; i < codeLength; ++i)
         offspringCode[i] = (i < splitIndex ? code[i] : other[i]);
-    return Specimen(offspringCode); // TODO check if this works
-}
-
-bool Specimen::operator<(const Specimen& rhs) const {
-    return fitness > rhs.fitness;
+    return Specimen(offspringCode);
 }
 
 void Specimen::setFitness(int fitness) {

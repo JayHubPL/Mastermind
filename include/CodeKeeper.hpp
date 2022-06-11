@@ -8,7 +8,6 @@ class CodeKeeper {
     bool codeBroken;
 public:
     CodeKeeper();
-    CodeKeeper(Code code);
     void checkTheGuess(Code& guess);
     bool wasCodeBroken() const;
 };

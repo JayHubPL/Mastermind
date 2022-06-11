@@ -10,5 +10,5 @@ public:
     void mutate();
     Specimen crossWith(const Specimen& other);
     void setFitness(int fitness);
-    bool operator<(const Specimen& rhs) const;
+    inline bool operator<(const Specimen& rhs) const { return fitness > rhs.fitness; };
 };
