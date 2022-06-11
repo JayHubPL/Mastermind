@@ -1,12 +1,12 @@
 CXX       := g++
-CXX_FLAGS := -std=c++17 -ggdb
+CXX_FLAGS := -std=c++17 -O3
 
 BIN     := bin
 SRC     := src
 INCLUDE := include
 
 LIBRARIES   :=
-EXECUTABLE  := main
+EXECUTABLE  := Mastermind
 
 
 all: $(BIN)/$(EXECUTABLE)
